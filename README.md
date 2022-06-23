@@ -24,7 +24,7 @@ rsaKeyGenerator(bits)
 	- phi(n): Halla la cantidad de números 		coprimos menores a "n" con respecto a "n"
 - Genera un número "e" tal que sea coprimo con phiN
 - Halla la inversa de "e" (d = inversa(e))
-	- (e*d) es congruente con 1 en módulo n
+	- (e*d) es congruente con 1 en módulo phiN
 - Retorna los valores "e", "d" y "n"
 
 rsaCipher(mensaje, llaves)
