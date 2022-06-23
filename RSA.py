@@ -26,7 +26,13 @@ def rsaCipher(m, k):
 
 if __name__ == "__main__":
     (P, S) = rsaKeyGenerator(64)
+    m_list=[]
     print(P, S)
-    m = int(input("Ingrese un numero: "))
-    c = rsaCipher(m, P)
-    print(m, c, rsaCipher(c, S))
+    print('{:^20}{:^20}{:^20}'.format('m', 'c', 'm\''))
+    for i in range(10):
+        m = randomBits(32)
+        while m in m_list:
+            m = randomBits(32)
+        m_list.append(m)
+        c = rsaCipher(m, P)
+        print('{:^20}{:^20}{:^20}'.format(m, c, rsaCipher(c, S)))
